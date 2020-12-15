@@ -10,7 +10,8 @@ namespace loop_homework
             string CorrectPassword = "!Renata123";
 
             Console.WriteLine();
-            ForLoop.GetUserNameAndPassword("enter", CorrectUserName.Trim(),CorrectPassword.Trim());
+           //ForLoop.GetUserNameAndPassword("enter", CorrectUserName.Trim(),CorrectPassword.Trim());
+           WhileLoop.GetUserNameAndPassword("enter", CorrectUserName.Trim(),CorrectPassword.Trim(), true);
         }
     }
 }
