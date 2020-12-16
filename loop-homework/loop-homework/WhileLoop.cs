@@ -17,6 +17,7 @@ namespace loop_homework
             string userName = Utils.ReadUserName(UserAndPassLabel);
             string password = Utils.ReadPassword(UserAndPassLabel);
             bool correctUserAndPass;
+            
             correctUserAndPass = Utils.CheckEquality(userName.Trim(), password.Trim(), CorrectUserName, CorrectPassword);
             return correctUserAndPass;
         }
