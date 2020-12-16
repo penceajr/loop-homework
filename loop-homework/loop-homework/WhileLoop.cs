@@ -7,7 +7,7 @@ namespace loop_homework
     public static class WhileLoop
     {
 
-        public static void GetUserNameAndPassword(string UserAndPassLabel, string CorrectUserName, string CorrectPassword, bool isCorrectUserAndPass)
+        public static bool GetUserNameAndPassword(string UserAndPassLabel, string CorrectUserName, string CorrectPassword)
         {
             if (string.IsNullOrWhiteSpace(UserAndPassLabel))
             {
@@ -16,40 +16,28 @@ namespace loop_homework
           
             string userName = Utils.ReadUserName(UserAndPassLabel);
             string password = Utils.ReadPassword(UserAndPassLabel);
-            UsingWhileLoop(userName.Trim(), password.Trim(), CorrectUserName, CorrectPassword, isCorrectUserAndPass);
+            bool correctUserAndPass;
+            correctUserAndPass = Utils.CheckEquality(userName.Trim(), password.Trim(), CorrectUserName, CorrectPassword);
+            return correctUserAndPass;
         }
 
-        public static void UsingWhileLoop(string user, string pass, string CorrectUser, string CorrectPass, bool correctUserAndPass)
+        public static void UsingWhileLoop(string CorrectUserName, string CorrectPassword)
         {
-            
-            while (correctUserAndPass)
+            bool correctUserAndPass = GetUserNameAndPassword("enter", CorrectUserName, CorrectPassword);
+
+            while (!correctUserAndPass)
             {
-                if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
-                {
-                    correctUserAndPass = true;
-                    Console.WriteLine();
-                    Console.WriteLine("Username or password are not correct");
-                    GetUserNameAndPassword("renter", CorrectUser, CorrectPass, correctUserAndPass);
-                }
-                else if (!string.Equals(user, CorrectUser, StringComparison.InvariantCultureIgnoreCase) ||
-                   !string.Equals(pass, CorrectPass))
-                {
-                    correctUserAndPass = true;
-                    Console.WriteLine();
-                    Console.WriteLine("Username or password are not correct");
-                    GetUserNameAndPassword("renter", CorrectUser, CorrectPass, correctUserAndPass);
-                }
-                else
-                {
-                    
-                    Console.WriteLine();
-                    Console.WriteLine("Welcome!");
-                    correctUserAndPass = false;
-                    break;
-                    
-                }
+                Console.WriteLine();
+                Console.WriteLine("Username or password are not correct");
+                correctUserAndPass = GetUserNameAndPassword("renter", CorrectUserName, CorrectPassword);
+
             }
+
+            Console.WriteLine();
+            Console.WriteLine("Your credentials are correct. Welcome!", 20);
         }
 
+
+        
     }
 }

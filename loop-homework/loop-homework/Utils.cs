@@ -61,5 +61,23 @@ namespace loop_homework
                 Marshal.ZeroFreeGlobalAllocUnicode(valuePtr);
             }
         }
+
+        public static bool CheckEquality(string user, string pass, string CorrectUserName, string CorrectPassword)
+        {
+            if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
+            {
+                return false;
+            }
+
+                if (string.Equals(user, CorrectUserName, StringComparison.InvariantCultureIgnoreCase) &&
+                    string.Equals(pass, CorrectPassword))
+                {
+                return true;
+                }
+                else
+                
+                return false;
+                }
+
+        }
     }
-}

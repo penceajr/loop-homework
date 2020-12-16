@@ -6,12 +6,12 @@ namespace loop_homework
     {
         static void Main(string[] args)
         {
-            string CorrectUserName = "penceac";
-            string CorrectPassword = "!Renata123";
+            string CorrectUserName = "user";
+            string CorrectPassword = "pass";
 
             Console.WriteLine();
            //ForLoop.GetUserNameAndPassword("enter", CorrectUserName.Trim(),CorrectPassword.Trim());
-           WhileLoop.GetUserNameAndPassword("enter", CorrectUserName.Trim(),CorrectPassword.Trim(), true);
+           WhileLoop.UsingWhileLoop(CorrectUserName.Trim(),CorrectPassword.Trim());
         }
     }
 }
