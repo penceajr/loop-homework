@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Globalization;
-using System.Collections.Generic;
-using System.Text;
 
 namespace loop_homework
 {
@@ -32,7 +29,7 @@ namespace loop_homework
                     Console.WriteLine("Username or password are not correct");
                     GetUserNameAndPassword("renter", CorrectUser, CorrectPass);
                 }else if(!string.Equals(user, CorrectUser, StringComparison.InvariantCultureIgnoreCase) || 
-                    !string.Equals(pass, CorrectPass))
+                         !string.Equals(pass, CorrectPass))
                 {
                     correctUserAndPass = false;
                     Console.WriteLine();
@@ -42,7 +39,7 @@ namespace loop_homework
                 else
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Welcome!");
+                    Console.WriteLine("Your credentials are correct. Welcome!");
                     break;
                 }
 
